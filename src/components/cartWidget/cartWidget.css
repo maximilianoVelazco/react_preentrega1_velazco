@@ -1,0 +1,26 @@
+.cartContainer{
+    width: 40px;
+    height: 30px;
+    position: relative;
+}
+.cartContainer .cartCounter{
+    width: 22px;
+    height: 22px;
+    background-color: rgb(19, 19, 19);
+    color: #EBE1D8;
+    border: 2px solid #EBE1D8;
+    border-radius: 50%;
+    position: absolute;
+    font-weight: bold;
+    font-size: .6em;
+    top: 10px;
+    right: -5px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cartContainer .cart{
+    width: 30px;
+}
+
