@@ -18,6 +18,8 @@ function ItemListContainer() {
     getItemAsync();
     },[id]);
 
+
+    //pinto las tarjetas de productos
   return (
     <div className='itemListContainer'>
       {

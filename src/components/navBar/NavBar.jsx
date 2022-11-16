@@ -13,6 +13,7 @@ const NavBar = () => {
                 <Logo />
                 <nav>
                     <ul>
+                        
                         <li>
                             <Link className="enlace" to="/category/Ropa de hombre">Ropa Hombre</Link>
                         </li>
