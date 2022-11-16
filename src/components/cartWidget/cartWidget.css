@@ -1,6 +1,6 @@
 .cartContainer{
     width: 40px;
-    height: 30px;
+    height: 40px;
     position: relative;
 }
 .cartContainer .cartCounter{
@@ -12,15 +12,15 @@
     border-radius: 50%;
     position: absolute;
     font-weight: bold;
-    font-size: .6em;
-    top: 10px;
-    right: -5px;
+    font-size: .7em;
+    top: 0px;
+    right: -10px;
     z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .cartContainer .cart{
-    width: 30px;
+    width: 40px;
 }
 

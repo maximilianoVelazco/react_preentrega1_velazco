@@ -1,0 +1,29 @@
+.itemListContainer{
+    width: 100%;
+    max-width: 1200px;
+    margin: 70px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* MEDIA QUERYS */
+@media (max-width: 1024px) {
+    .itemListContainer{
+        padding: 0 18px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .itemListContainer{
+        padding: 0 18px;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .itemListContainer{
+        grid-template-columns: 1fr;
+    }
+}

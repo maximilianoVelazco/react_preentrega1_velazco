@@ -1,22 +1,29 @@
 import React from "react";
 import "./navBar.css";
 import CartWidget from "../cartWidget/CartWidget";
-import NavBarLink from "./NavBarLink";
+import Logo from "../logo/Logo";
+import { Link } from "react-router-dom";
 
-const NavBar = () =>{
+const NavBar = () => {
     const contador = 6;
 
-    return(
+    return (
         <header className="navBar" >
             <div className="mainContainer">
-                <h1 className="logo">Razzo</h1>
+                <Logo />
                 <nav>
                     <ul>
-                        <NavBarLink link="Inicio" />
-                        <NavBarLink link="Categorias" />
-                        <NavBarLink link="Tienda" /> 
+                        <li>
+                            <Link className="enlace" to="/category/Ropa de hombre">Ropa Hombre</Link>
+                        </li>
+                        <li>
+                            <Link className="enlace" to="/category/Ropa de mujer">Ropa Mujer</Link>
+                        </li>
+                        <li>
+                            <Link className="enlace" to='/category/Electronica'>Electronica</Link>
+                        </li>
                     </ul>
-                    <CartWidget count={contador}/>
+                    <CartWidget imgurl="/images/icons/cart.png" count={contador} />
                 </nav>
             </div>
         </header>

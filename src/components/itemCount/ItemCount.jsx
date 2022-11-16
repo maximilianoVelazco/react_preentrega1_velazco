@@ -1,16 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-function ItemCount({props}){
-    let [count, setCount] = React.useState(0)
+function ItemCount(props){
+    let [count, setCount] = React.useState(1)
 
     function handleSuma(){
-        if (count < props.stock)
+        if(count < props.stock)
         setCount (count+1);
     }
 
     function handleResta(){
-        if(count > props.stock)
-        setCount (count-1);
+       if(count > 0){ 
+            setCount (count-1);
+        }    
     }
 
     return(
@@ -22,6 +23,7 @@ function ItemCount({props}){
             <button>agregar al carrito</button>
         </div>
     )
+
 }
 
 export default ItemCount;
