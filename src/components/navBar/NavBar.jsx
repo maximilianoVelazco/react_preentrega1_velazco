@@ -13,17 +13,11 @@ const NavBar = () => {
                 <Logo />
                 <nav>
                     <ul>
-                        
-                        <li>
-                            <Link className="enlace" to="/category/Ropa de hombre">Ropa Hombre</Link>
-                        </li>
-                        <li>
-                            <Link className="enlace" to="/category/Ropa de mujer">Ropa Mujer</Link>
-                        </li>
-                        <li>
-                            <Link className="enlace" to='/category/Electronica'>Electronica</Link>
-                        </li>
+                        <li><Link className="enlace" to="/category/Ropa de hombre">Ropa Hombre</Link></li>
+                        <li><Link className="enlace" to="/category/Ropa de mujer">Ropa Mujer</Link></li>
+                        <li><Link className="enlace" to='/category/Electronica'>Electronica</Link></li>
                     </ul>
+                    {/* carrito de compras */}
                     <CartWidget imgurl="/images/icons/cart.png" count={contador} />
                 </nav>
             </div>

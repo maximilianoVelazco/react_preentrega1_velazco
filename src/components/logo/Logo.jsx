@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 
 function Logo() {
     return(
-        <>
-            <Link className="logo br" to="/">.Razzzo.</Link>
-        </>
+        <><Link className="logo" to="/">.Razzzo.</Link></>
     )
 }
 

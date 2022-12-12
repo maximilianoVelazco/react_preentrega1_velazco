@@ -23,7 +23,6 @@
     max-height: 250px;
     margin-right: 100px;
     overflow: hidden;
-    
 }
 
 .cardItemDetail .cardImg img{
@@ -73,4 +72,36 @@
 .negrita{
     font-size: 40px;
     font-weight: bold;
+}
+
+.btnGoCartContainer{
+    text-align: center;
+    border: none;
+    color: #f1f1f1;
+    font-size: .9rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    border-radius: 2px;
+}
+
+.btnGoCartContainer button{
+   
+    padding: 15px 30px;
+}
+
+
+@media (max-width: 800px) {
+    .cardItemDetail{
+        flex-direction: column;
+        padding: 18px;
+    }
+
+    .cardItemDetail .cardImg{
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0px;
+        overflow: hidden;
+        display: flex;
+        margin-bottom: 20px;
+    }
 }

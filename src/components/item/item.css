@@ -33,6 +33,12 @@
     flex-direction: column;
 }
 
+.cardItem .cardContent .enlace{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .cardItem .cardContent p, h3, span{
     margin: 0px;
     padding: 0px;
@@ -57,17 +63,11 @@
     padding: 0px;
 }
 
-.cardItem .cardContent .btn{
-    align-self: flex-end;
-    width: 50%;
-    border: none;
-    background-color: #696969;
-    color: #c4c6c9;
-    padding: 10px 24px;
-    text-align: center;
-}
-
 .negrita{
     font-size: 24px;
     font-weight: bold;
+}
+
+.btnCard{
+    padding: 15px auto;
 }

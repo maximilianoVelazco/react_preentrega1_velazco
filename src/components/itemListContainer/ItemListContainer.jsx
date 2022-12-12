@@ -1,31 +1,41 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Children } from "react";
 import "./itemListContainer.css";
 import getItems from "../../services/mocServices";
 import Item from "../item/Item";
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
+import Loader from "../loader/Loader";
+
 
 function ItemListContainer() {
 
   const [products, setProducts] = useState([]);
-  const {id} = useParams();
+  const [isLoading, setIsLoading] = useState(true);
+  const { id } = useParams();
 
-  async function getItemAsync(){
-    let respuesta = await getItems(id);
-    setProducts(respuesta);
+  async function getItemAsync() {
+    getItems(id).then(response =>{
+      setIsLoading(false)
+      setProducts(response);
+    });
   }
-  
+
   useEffect(() => {
     getItemAsync();
-    },[id]);
+  }, [id]);
 
+//pinto las tarjetas de productos
+if (isLoading) {
+  return (<>
+      <Loader />
+  </>);
+}
 
-    //pinto las tarjetas de productos
   return (
     <div className='itemListContainer'>
       {
-        products.map((products) => { 
+        products.map((products) => {
           return (
-            <Item 
+            <Item
               key={products.id}
               id={products.id}
               image={products.image}
@@ -33,13 +43,14 @@ function ItemListContainer() {
               title={products.title}
               description={products.description}
               price={products.price}
+              stock={products.stock}
               btnText="Ver más"
             />
           )
         })
-      }  
+      }
     </div>
   );
-} 
+}
 
 export default ItemListContainer

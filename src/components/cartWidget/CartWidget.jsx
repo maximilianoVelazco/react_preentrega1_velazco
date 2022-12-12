@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import './cartWidget.css';
+import { cartContext } from "../../context/cartContext";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const CartWidget = (props) =>{
+    
+    const contexto = useContext(cartContext);
+    const toCart = `/cart/`;
+    
     return( 
-        <div className='cartContainer'> 
-           <span className="cartCounter">{props.count}</span>
+        <Link to={toCart} className='cartContainer'> 
+
+        { 
+            (contexto.itemsEnCarrito() > 0) ? 
+                <span className="cartCounter">{contexto.itemsEnCarrito()}</span> :
+                <></> 
+        }
+
            <img src={props.imgurl} className="cart" alt="carrito de compras" />
-        </div>
+        </Link>
     )
+
 }
 
 export default CartWidget;

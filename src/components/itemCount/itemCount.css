@@ -1,0 +1,55 @@
+.addToCart{
+    display: flex;
+    flex-direction: row;
+}
+
+.addToCart span{
+    width: 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.addToCart button:last-child{
+    padding: 15px 30px;
+    margin-left: 18px;
+}
+
+.btnAddToCart{
+    border: none;
+    color: #f1f1f1;
+    font-size: .9rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    padding: 3px 8px;
+    border-radius: 2px;
+    background-color: #2c2c2c;  
+
+}
+
+@media (min-width: 501px) and (max-width: 800px){
+    
+    .addToCart{
+        margin: 0 auto;
+    }
+    
+    .addToCart span{
+        height: auto;
+    }
+}
+
+
+@media (max-width: 500px){
+
+    .addToCart button:last-child{
+        flex-grow: 2;
+    }
+
+    .addToCart span{
+        height: auto;
+    }
+
+}

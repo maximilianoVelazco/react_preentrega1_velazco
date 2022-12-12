@@ -1,37 +1,42 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import {getSingleItem} from "../../services/mocServices";
+import { getSingleItem } from "../../services/mocServices";
 import ItemDetail from "./ItemDetail";
 import { useParams } from 'react-router-dom';
-
+import Loader from "../loader/Loader";
 
 function ItemDetailContainer() {
 
   const [product, setProduct] = useState([]);
-  const {id} = useParams();
+  const [isLoading, setIsLoading] = useState(true);
+  const { id } = useParams();
 
   async function getItemAsync() {
-    let response = await getSingleItem(id);
-    setProduct(response);
+    getSingleItem(id).then(response => {
+      setProduct(response);
+      setIsLoading(false);
+    });
   }
-  
-  useEffect(() =>{
+
+  useEffect(() => {
     getItemAsync();
   }, []);
-    
+
+
+  if (isLoading) {
+    return (<>
+        <Loader />
+    </>);
+  }
+
   return (
     <div className='itemDetailContainer'>
-       <ItemDetail
-              key={product.id}
-              id={product.id}
-              image={product.image}
-              category={product.category}
-              title={product.title}
-              description={product.description}
-              price={product.price}
-       />
+      <ItemDetail
+        product={product}
+      />
+
     </div>
   );
-} 
+}
 
 export default ItemDetailContainer
